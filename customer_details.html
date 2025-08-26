@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Details</title>
+  <link rel="stylesheet" href="{% static 'css/form.css' %}">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #FFF1DC;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #FF7300;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #FF7300;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e66200;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <h2>Customer Information</h2>
+
+    <form method="POST" action="{% url 'customer_details' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+</body>
+</html>

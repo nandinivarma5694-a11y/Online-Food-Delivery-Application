@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Summary</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #FFF1DC;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #FF7300;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    h4 {
+      color: #FF7300;
+      margin-bottom: 10px;
+    }
+
+    .info-section {
+      margin-bottom: 25px;
+    }
+
+    .info-box {
+      background-color: #fdf5e6;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    strong {
+      color: #333;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+    .buttonn{
+      width: 6%;
+      padding: 12px;
+      background-color: #FF7300;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: 45%;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>🎉 Order Placed Successfully!</h2>
+    <p style="text-align:center;">Order ID: <strong>#KHZ{{ data.phone }}</strong></p>
+
+    <!-- Customer Info -->
+    <div class="info-section">
+      <h4>👤 Customer Info</h4>
+      <div class="info-box">
+        <p><strong>Name:</strong> {{ data.name }}</p>
+        <p><strong>Phone:</strong> {{ data.phone }}</p>
+        <p><strong>Email:</strong> {{ data.email }}</p>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="info-section">
+      <h4>📍 Address</h4>
+      <div class="info-box">
+        <p>{{ data.address }}, {{ data.city }} - {{ data.pincode }}</p>
+      </div>
+    </div>
+
+    <!-- Payment -->
+    <div class="info-section">
+      <h4>💳 Payment Method</h4>
+      <div class="info-box">
+        <p>{{ data.payment|title }}</p>
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="info-section">
+      <h4>🧾 Order Summary</h4>
+      <div class="info-box">
+        <p>Paneer Butter Masala x1 - ₹220</p>
+        <p>Garlic Naan x2 - ₹80</p>
+        <p><strong>Total: ₹300</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="buttonn">
+    <a href="{% url 'home' %}"><button>Ok</button></a>
+    </div>
+
+</body>
+</html>

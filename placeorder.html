@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Details - Khana Khazana</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #FFF1DC;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #FF7300;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #FF7300;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e66200;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Customer Information</h2>
+
+    <form action="/place-order/" method="POST">
+      <!-- Full Name -->
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Phone Number -->
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+      <!-- Email -->
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email">
+
+      <!-- Address -->
+      <label for="address">Full Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <!-- City -->
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" required>
+
+      <!-- Pincode -->
+      <label for="pincode">Pincode</label>
+      <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required>
+
+      <!-- Payment Method -->
+      <label for="payment">Payment Method</label>
+      <select id="payment" name="payment" required>
+        <option value="">Select</option>
+        <option value="cod">Cash on Delivery</option>
+        <option value="upi">UPI</option>
+        <option value="card">Credit/Debit Card</option>
+      </select>
+
+      <!-- Submit -->
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+
+</body>
+</html>
